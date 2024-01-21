@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ten Answers</title>
+
+
+    <!-- css and js file -->
+        <link rel="stylesheet" href="/resource/css/index.css">
+        <link rel="stylesheet" href="/resource/css/element.css">
+
+    <!-- link cnd -->
+
+        <!-- font awesome cnd -->
+        <script src="https://kit.fontawesome.com/2e92bf8ff3.js" crossorigin="anonymous"></script>
+        
+        <!-- Bootstrap5 cnd -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+    <div class="warpper d-flex justify-content-center">
+        <div id="overlay"></div>
+
+        <div id="frame" class="frame d-flex flex-column justify-content-center align-items-center position-relative" style="width: 390px; height: 100dvh; background-color: #1d313c; overflow: hidden;">
+            <div class="nav d-flex justify-content-end fixed-top position-absolute w-100 p-4" style="z-index: 0;">
+                <a href="/resource/page/tutorial.html"><i class="fa-regular fa-circle-question" style="color: #ffff; font-size: 35px;"></i></a>
+            </div>
+            <div class="logo">10</div>
+            <div class="name"><h1><span>Ten</span>Answers</h1></div>
+            <div class="button-container w-100 h-20 d-flex flex-column justify-content-start align-items-center">
+                <button id="continue" class="blue-btn my-3 text-nowrap justify-content-center" style="display: none;">เล่นต่อ</button>
+                <button id="start" class="white-btn my-3 text-nowrap d-flex  justify-content-center">เริ่มเกมใหม่</button>
+            </div>
+        </div>
+
+        <div id="container" class="mode-container">
+            <div class="mode-box" onclick="Navigate('easy')">
+                <div class="mode-item">ง่าย</div>
+            </div>
+            <div class="mode-box" onclick="Navigate('normal')">
+                <div class="mode-item">ปานกลาง</div>
+            </div>
+            <div class="mode-box" onclick="Navigate('hard')">
+                <div class="mode-item">ยาก</div>
+            </div>
+        </div>
+        
+        
+    </div>
+</body>
+<script>
+window.onload=()=>{
+    if(sessionStorage.getItem("randomNum") == ''){
+        document.getElementById('continue').style.display ='none'
+    }else{
+        document.getElementById('continue').style.display ='block'
+
+    }
+}
+// Popup and Overlay Function
+    const startBtn = document.getElementById('start')
+    const continueBtn = document.getElementById('continue')
+    const container = document.getElementById('container')
+    const overlay = document.getElementById('overlay')
+    
+    // when click start button add active class to popup container
+    // and open overlay make screen look black
+        startBtn.addEventListener('click', ()=>{
+            container.classList.toggle('active')
+            overlay.style.display='block'
+
+            // when popup active all screen will cover with overlay
+            // if you click outside popup container (click on overlay)
+            // popup container will remove active class
+            // add close overlay
+            overlay.addEventListener('click', ()=>{
+                if(container.classList.contains('active')){
+                container.classList.remove('active')
+                overlay.style.display='none'
+            }
+            })
+        })
+
+
+// Click start new game to navigate and set mode function
+        
+        const Navigate =(mode)=>{
+            //get mode to set game level in game.html
+            sessionStorage.setItem("modeLevel",mode)
+
+            //reset random number to start new game
+            sessionStorage.setItem("randomNum",'')
+
+            //clear all answer to start new game
+            sessionStorage.setItem("inputNum",'[]')
+
+            //navigate to game page
+            window.location.href =  '/resource/page/game.html'
+        }
+
+
+// continue button 
+        continueBtn.addEventListener('click', ()=>{
+            window.location.href =  '/resource/page/game.html'
+        })
+
+        
+        
+</script>
+</html>
