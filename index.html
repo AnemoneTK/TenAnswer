@@ -54,11 +54,10 @@
 </body>
 <script>
 window.onload=()=>{
-    if(sessionStorage.getItem("randomNum") == ''){
+    if(sessionStorage.getItem("randomNum") == '' || sessionStorage.getItem("randomNum") == null ){
         document.getElementById('continue').style.display ='none'
     }else{
         document.getElementById('continue').style.display ='block'
-
     }
 }
 // Popup and Overlay Function
