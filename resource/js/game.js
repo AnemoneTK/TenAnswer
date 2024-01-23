@@ -3,6 +3,7 @@ window.onload = ()=>{
     // when game start cursor will 
         document.getElementById('num-input').focus()
 
+    // set Round when game start and continue
         document.getElementById('counter').innerHTML=  sessionStorage.getItem('Round')
 
     
