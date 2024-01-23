@@ -2,6 +2,9 @@ window.onload = ()=>{
 
     // when game start cursor will 
         document.getElementById('num-input').focus()
+
+        document.getElementById('counter').innerHTML=  sessionStorage.getItem('Round')
+
     
     // set game level 
         let modeLevel = sessionStorage.getItem('modeLevel')
