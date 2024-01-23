@@ -1,5 +1,5 @@
-.logo{
-    cursor:default;
+.logo {
+    cursor: default;
     width: 150px;
     height: 150px;
     display: flex;
@@ -14,21 +14,23 @@
     color: var(--blue);
 }
 
-.name{
+.name {
     margin: 80px 0px 120px 0px;
     cursor: default;
 }
-.name h1{
+
+.name h1 {
     font-size: 48px;
     font-weight: 100;
     color: var(--white);
 }
-.name span{
+
+.name span {
     font-weight: 700;
     color: var(--blue);
 }
 
-.mode-container{
+.mode-container {
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -39,7 +41,8 @@
     background-color: var(--white);
     transition: all 0.5s ease;
 }
-.mode-container.active{
+
+.mode-container.active {
     z-index: 3;
     flex-direction: column;
     justify-content: center;
@@ -51,14 +54,16 @@
     background-color: var(--white);
     transition: all 0.5s ease;
 }
-.mode-box{
+
+.mode-box {
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-.mode-item{
+
+.mode-item {
     padding: 20px 50px;
     font-size: 40px;
     font-weight: 700;
@@ -72,37 +77,41 @@
     cursor: pointer;
 }
 
-.mode-box:nth-child(1){
-    border-radius: 30px 30px 0px 0px ;
+.mode-box:nth-child(1) {
+    border-radius: 30px 30px 0px 0px;
     color: var(--blue);
 }
-.mode-box:nth-child(2){
+
+.mode-box:nth-child(2) {
     color: var(--orange);
 }
-.mode-box:nth-child(3){
-    border-radius: 0px 0px 30px 30px ;
+
+.mode-box:nth-child(3) {
+    border-radius: 0px 0px 30px 30px;
     color: var(--red);
 }
 
 
-.mode-box:hover .mode-item{
+.mode-box:hover .mode-item {
     color: var(--white);
     transition: all 0.3s ease;
 }
 
 
-.mode-box:hover:nth-child(1){
-    border-radius: 30px 30px 0px 0px ;
+.mode-box:hover:nth-child(1) {
+    border-radius: 30px 30px 0px 0px;
     background-color: var(--blue);
 }
-.mode-box:hover:nth-child(2){
+
+.mode-box:hover:nth-child(2) {
     background-color: var(--orange);
 }
-.mode-box:hover:nth-child(3){
+
+.mode-box:hover:nth-child(3) {
     background-color: var(--red);
 }
 
-.mode-box:nth-child(2) .mode-item{
+.mode-box:nth-child(2) .mode-item {
     border-top: 3px solid #1d313c;
     border-bottom: 3px solid #1d313c;
 }
