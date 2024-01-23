@@ -58,6 +58,20 @@
         color: var(--white);
         text-align: center;
     }
+    .result-container.active{
+        z-index: 3;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        bottom: 200px;
+        width: 350px;
+        height: 350px;
+        border-radius: 30px;
+        background-color: var(--white);
+        transition: all 0.3s ease;
+    }
 }
 @media screen and (max-height:767px) {
     .button-container{
@@ -103,5 +117,18 @@
         border-bottom: 3px solid var(--white);
         margin: 0px 0px 10px 0px;
     }
-    
+    .result-container.active{
+        z-index: 3;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        bottom: 200px;
+        width: 350px;
+        height: 350px;
+        border-radius: 30px;
+        background-color: var(--white);
+        transition: all 0.3s ease;
+    }
 }
