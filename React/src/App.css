@@ -13,16 +13,3 @@
   height: 100dvh;
   background-color: var(--background);
 }
-
-.nav{
-  color: #ffff;
-}
-.logo{
-  color: var(--blue);
-  font-size: 6rem;
-  height: 150px;
-}
-
-.ten{
-  color: var(--blue);
-}
