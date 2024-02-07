@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutorial</title>
+
+    <!-- link cnd -->
+
+    <link rel="stylesheet" href="../css/tutorial.css">
+    <link rel="stylesheet" href="../css/element.css">
+
+    <!-- font awesome cnd -->
+    <script src="https://kit.fontawesome.com/2e92bf8ff3.js" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap5 cnd -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+    <div class="warpper d-flex justify-content-center">
+        <div class="frame d-flex flex-column  align-items-center position-relative"
+            style="width: 390px; height: 100dvh; background-color: #1d313c; overflow: hidden;">
+            <div class="nav d-flex justify-content-start fixed-top position-absolute w-100 p-4">
+                <a onclick="history.back()"><i class="fa-solid fa-arrow-left"
+                        style="color: #ffff; font-size: 35px; cursor: pointer;"></i></a>
+            </div>
+            <div class="name">
+                <h1>วิธีเล่น</h1>
+            </div>
+
+            <div class="dropdown">
+                <div class="title">
+                    <h3>วิธีเล่น</h3>
+
+                    <svg width="20" height="15" viewBox="0 0 42 25">
+                        <path d="M3 3L21 21L39 3" stroke="white" stroke-width="7" stroke-linecap="round" />
+                    </svg>
+                </div>
+                <div class="answer">
+                    <p>
+                        เดาตัวเลขตั้งแต่ 0-99 <br>
+                        โปรแกรมจะบอกว่าตัวเลขที่พิมพ์มามีค่า<br>
+                        มากกว่าหรือน้อยกว่าตัวเลขที่พิมพ์มา<br>
+                        โดยสามารถเดาได้สูงสุด 10 ครั้ง
+                    </p>
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <div class="title">
+                    <h3>ระดับ ง่าย</h3>
+
+                    <svg width="20" height="15" viewBox="0 0 42 25">
+                        <path d="M3 3L21 21L39 3" stroke="white" stroke-width="7" stroke-linecap="round" />
+                    </svg>
+                </div>
+                <div class="answer">
+                    <p>
+                        <li>แสดงตัวเลขที่พิมพ์ทั้งหมด</li>
+                        <li>บอกขนาดของตัวเลข</li>
+                    </p>
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <div class="title">
+                    <h3>ระดับ ปานกลาง</h3>
+
+                    <svg width="20" height="15" viewBox="0 0 42 25">
+                        <path d="M3 3L21 21L39 3" stroke="white" stroke-width="7" stroke-linecap="round" />
+                    </svg>
+                </div>
+                <div class="answer">
+                    <p>
+                        <li>แสดงตัวเลขที่พิมพ์ล่าสุด</li>
+                        <li>บอกขนาดของตัวเลข</li>
+                    </p>
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <div class="title">
+                    <h3>ระดับ ยาก</h3>
+
+                    <svg width="20" height="15" viewBox="0 0 42 25">
+                        <path d="M3 3L21 21L39 3" stroke="white" stroke-width="7" stroke-linecap="round" />
+                    </svg>
+                </div>
+                <div class="answer">
+                    <p>
+                        <li>ไม่แสดงตัวเลขที่พิมพ์</li>
+                        <li>ไม่บอกขนาดของตัวเลข</li>
+                        <li>ใช้ดวง 100%</li>
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+<script>
+    const dropdown = document.querySelectorAll('.dropdown')
+
+    dropdown.forEach(dropdown => {
+        dropdown.addEventListener('click', () => {
+            dropdown.classList.toggle('active')
+        })
+    })
+</script>
+
+</html>

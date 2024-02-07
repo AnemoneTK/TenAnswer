@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ten Answers</title>
+
+
+    <!-- css and js file -->
+    <link rel="stylesheet" href="../css/game.css">
+    <link rel="stylesheet" href="../css/element.css">
+    <link rel="stylesheet" href="../css/respondsive.css">
+
+    <script src="../js/game.js"></script>
+
+
+    <!-- link cnd -->
+
+    <!-- font awesome cnd -->
+    <script src="https://kit.fontawesome.com/2e92bf8ff3.js" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap5 cnd -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+    <div class="warpper d-flex justify-content-center">
+        <div id="overlay"></div>
+        <div id="frame" class="frame d-flex flex-column justify-content-start align-items-center pt-5 position-relative"
+            style="width: 390px; height: 100dvh; background-color: #1d313c; overflow: hidden;">
+            <div class="nav d-flex justify-content-between fixed-top position-absolute w-100 p-4" style="z-index: 0;">
+                <a href="https://anemonetk.github.io/TenAnswer/index.html"><i class="fa-solid fa-arrow-left"
+                        style="color: #ffff; font-size: 35px;"></i></a>
+                <a href="https://anemonetk.github.io/TenAnswer/resource/page/tutorial.html"><i
+                        class="fa-regular fa-circle-question" style="color: #ffff; font-size: 35px;"></i></a>
+            </div>
+            <div class="name mt-5 mb-4">
+                <h1 id="mode">ระดับ<br>
+                    <span id="showModeText"></span>
+                </h1>
+                <p id="count-box">รอบ <span id="counter">1</span> / 10</p>
+            </div>
+            <div class="label d-flex flex-column w-100 mb-5">
+                <div class="showInput-box w-100">
+                    <h2 id="showInputTitle" class="title">ตัวเลขที่เดาไปแล้ว</h2>
+                    <h1 id="showInput" class="txt"></h1>
+                </div>
+                <div id="showValue">
+                    <h1 id="txt"></h1>
+                </div>
+            </div>
+            <div class="button-container w-100 h-20 d-flex flex-column justify-content-start align-items-center">
+                <div class="hint-box">
+                    <p id="hint" class="hint">กรุณากรอกตัวเลขจำนวนเต็มตั้งแต่ 0-99</p>
+                </div>
+                <input type="text" id="num-input" class="num-input" placeholder="กรุณากรอกตัวเลข">
+                <button id="submit"
+                    class="white-btn w-25 my-3 text-nowrap d-flex  justify-content-center">ยืนยัน</button>
+            </div>
+        </div>
+
+        <div id="result" class="result-container">
+            <h1 id="textResult"></h1>
+            <p>คำตอบคือ</p>
+            <h1 id="answer"></h1>
+            <p id="roundUse"></p>
+            <button id="back" class="black-btn">เริ่มเกมใหม่</button>
+        </div>
+
+
+    </div>
+</body>
+<script>
+    //set submit button function
+    const submit = document.getElementById("submit")
+    const output = document.getElementById('showInput')
+    const counter = document.getElementById('counter')
+    let count = parseInt(sessionStorage.getItem('Round'))
+    counter.innerHTML = count
+
+    submit.addEventListener('click', () => {
+        // get value from input field
+        let inputNumber = document.getElementById('num-input').value
+
+        // check that input in 0-99 and check integer or float 
+        // (if %1 and result is not 0 that mean input is float or decimal)
+        if (inputNumber >= 0 && inputNumber <= 99 && inputNumber % 1 == 0 && inputNumber != '') {
+            // if on all condition will save number into array 
+            let newNumber = ' ' + inputNumber
+            let aryNumber = JSON.parse(sessionStorage.getItem("inputNum"))
+
+
+            // close hint text
+            document.getElementById('hint').style.display = 'none'
+
+            //set counter 
+            if (count < 10) {
+                // save number into array and show all input number
+                aryNumber.push(newNumber)
+                sessionStorage.setItem('inputNum', JSON.stringify(aryNumber))
+                output.innerHTML = JSON.parse(sessionStorage.getItem("inputNum"))
+
+                CheckWin(inputNumber, count)
+                checkInputNumber(inputNumber)
+
+                //show counter to screen
+                count = count + 1
+                counter.innerHTML = count
+                sessionStorage.setItem('Round', count)
+                console.log(count)
+
+                // clear input field and focus play can type number immediately
+                document.getElementById('num-input').value = ''
+                document.getElementById('num-input').focus()
+            } else {
+                // when submit answer program will check the last answer is correct or not
+                aryNumber.push(newNumber)
+                sessionStorage.setItem('inputNum', JSON.stringify(aryNumber))
+                CheckWin(inputNumber, count)
+            }
+
+        } else {
+            // when player type string or decimal number hint will active
+            // and close when player enter integer number in 0-99
+            document.getElementById('num-input').value = ''
+            inputNumber = ''
+            document.getElementById('hint').style.display = 'block'
+            document.getElementById('num-input').focus()
+        }
+    })
+
+    const backToNew = document.getElementById('back')
+
+    backToNew.addEventListener('click', () => {
+        //reset random number to start new game
+        sessionStorage.setItem("randomNum", '')
+
+        //clear all answer to start new game
+        sessionStorage.setItem("inputNum", '[]')
+
+        window.location.href = 'https://anemonetk.github.io/TenAnswer/index.html'
+
+    })
+</script>
+
+</html>
