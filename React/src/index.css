@@ -1,8 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=K2D:wght@100;300;400;500;700;800&display=swap');
+
+:root {
+  --background: #1D313c;
+  --blue: #50A3AB;
+  --orange: #F6723A;
+  --red: #C43B39;
+  --black: #1F1F1F;
+  --white: #ffff;
+}
+
+*,body {
+    font-family: 'K2D';
+    box-sizing: border-box;
+    overflow: hidden;
+    user-select: none;
+}
 body{
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;

@@ -11,10 +11,18 @@
   padding: 0;
   margin: 0;
   height: 100dvh;
-  background-color: #ffff;
+  background-color: var(--background);
 }
 
 .nav{
-  background-color: rebeccapurple;
   color: #ffff;
+}
+.logo{
+  color: var(--blue);
+  font-size: 6rem;
+  height: 150px;
+}
+
+.ten{
+  color: var(--blue);
 }
