@@ -10,6 +10,6 @@
 .frame{
   padding: 0;
   margin: 0;
-  height: 100dvh;
+  height: 100%;
   background-color: var(--background);
 }
