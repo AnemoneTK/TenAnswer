@@ -3,7 +3,7 @@ import './logo.css'
 function Logo(){
     return(
         <>
-        <div className="logo-container row d-flex justify-content-center align-items-start">
+        <div className="logo-container row d-flex justify-content-center align-items-start m-0">
             <div className="row justify-content-center">
               <h1 className="logo p-3 text-center bg-white rounded-4 bolder">10</h1>
             </div>

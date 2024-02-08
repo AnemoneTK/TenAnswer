@@ -12,12 +12,12 @@ function App() {
   let popRef = useRef();
 
   useEffect(() => {
-    let handler = (e) => {
+    let overlay = (e) => {
       if (!popRef.current.contains(e.target)) {
         setPopup(false);
       }
     };
-    document.addEventListener("mousedown", handler);
+    document.addEventListener("mousedown", overlay);
   });
 
   return (
