@@ -1,6 +1,6 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.css";
-import { BlueButton, WhiteButton } from "./components/Button/Button";
+import Button from "./components/Button/Button";
 import Logo from "./components/Logo/Logo";
 import TopNav from "./components/TopNav/TopNav";
 import ModeBtn from "./components/ModePopup/ModeBtn";
@@ -34,7 +34,7 @@ function App() {
 
           <div className="row justify-content-center h-30">
             <div className="row col-6 justify-content-center m-2 mb-3">
-              <BlueButton textValue="เล่นต่อ" />
+              <Button textValue="เล่นต่อ" type="Blue"/>
             </div>
 
             <div
@@ -43,7 +43,7 @@ function App() {
                 setPopup(!popup);
               }}
             >
-              <WhiteButton textValue="เริ่มเกมใหม่" />
+              <Button textValue="เริ่มเกมใหม่" type="White"/>
             </div>
           </div>
 

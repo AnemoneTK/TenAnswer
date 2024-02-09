@@ -1,33 +1,33 @@
-.WhiteButton{
+.White{
     border: 3px solid var(--white);
     background-color: transparent;
     color: var(--white);
 }
-.WhiteButton:hover{
+.White:hover{
     border: 3px solid var(--white);
     background-color: var(--white);
     color: var(--blue);
     transition: all 0.3s ease;
 }
 
-.BlackButton{
+.Black{
     border: 3px solid var(--black);
     background-color: transparent;
     color: var(--black);
 }
-.BlackButton:hover{
+.Black:hover{
     border: 3px solid var(--black);
     background-color: var(--black);
     color: var(--blue);
     transition: all 0.3s ease;
 }
 
-.BlueButton{
+.Blue{
     border: 3px solid var(--blue);
     background-color: var(--blue);
     color: var(--white);
 }
-.BlueButton:hover{
+.Blue:hover{
     border: 3px solid var(--white);
     background-color: var(--white);
     color: var(--blue);
